@@ -1,0 +1,296 @@
+/* App.css */
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #f0ece2;
+  color: #333;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.App-header {
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: #5e503f;
+}
+
+.user-info-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.user-info-form div {
+  margin-bottom: 20px;
+}
+
+.user-info-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.user-info-form input,
+.user-info-form select,
+.user-info-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.user-info-form textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.user-info-form button {
+  background-color: #5e503f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.user-info-form button:hover {
+  background-color: #4a3f2f;
+}
+
+.letter-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.letter {
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 40px;
+  background-color: #f8f4e5;
+  border: 1px solid #d3c6a6;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: left;
+  overflow: visible; /* 修改为可见，去掉滚动条 */
+  max-height: none; /* 去掉最大高度限制 */
+}
+
+.letter::-webkit-scrollbar {
+  width: 8px;
+}
+
+.letter::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.letter::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.letter::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.letter pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0;
+  font-family: inherit;
+}
+
+.letter p {
+  margin-bottom: 20px;
+}
+
+.letter-item.past-letter .letter {
+  background-color: #f0e6d2;
+  border-color: #d3c6a6;
+}
+
+.letter-item.present-letter .letter {
+  background-color: #ffffff;
+  border-color: #e0e0e0;
+}
+
+.letter-timeline {
+  position: relative;
+  padding-left: 20px;
+}
+
+.letter-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #5e503f;
+}
+
+.letter-item {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.letter-item::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #5e503f;
+}
+
+.toggle-button {
+  background-color: #5e503f;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+
+.toggle-button:hover {
+  background-color: #4a3f2f;
+}
+
+.situation-hint {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.letter-item.past-letter .letter {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #f0e6d2;
+  border: 1px solid #d3c6a6;
+}
+
+.letter-item.present-letter .letter {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+.writing-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  padding: 20px;
+}
+
+.pencil {
+  width: 60px;
+  height: 8px;
+  background-color: #FFA500;
+  position: relative;
+  transform-origin: left center;
+  animation: writing 2s infinite;
+}
+
+.pencil::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: -6px;
+  width: 0;
+  height: 0;
+  border-right: 10px solid #FFA500;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.pencil::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: 0;
+  width: 4px;
+  height: 8px;
+  background-color: #000;
+}
+
+@keyframes writing {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(2px, 2px) rotate(2deg); }
+  50% { transform: translate(0, 4px) rotate(0deg); }
+  75% { transform: translate(-2px, 2px) rotate(-2deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.random-lyric {
+  margin-top: 20px;
+  font-style: italic;
+  color: #666;
+}
+
+.reply-form {
+  width: calc(100% - 40px); /* 调整宽度以匹配信件宽度，减去内边距 */
+  max-width: 800px; /* 设置最大宽度与信件容器一致 */
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border: 1px solid #e0d9c3;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.reply-form h2 {
+  color: #5e503f;
+  margin-bottom: 20px;
+}
+
+.reply-form textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.reply-form button {
+  background-color: #5e503f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reply-form button:hover {
+  background-color: #4a3f2f;
+}
+
+/* 清除浮动 */
+.reply-form::after {
+  content: "";
+  display: table;
+  clear: both;
+}
