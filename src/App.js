@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import UserInfoForm from './components/UserInfoForm';
 import LetterGenerator from './components/LetterGenerator';
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [userInfo, setUserInfo] = useState(null);
@@ -22,6 +23,7 @@ function App() {
           <LetterGenerator userInfo={userInfo} />
         )}
       </main>
+      <Analytics />
     </div>
   );
 }
