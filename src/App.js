@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import UserInfoForm from './components/UserInfoForm';
 import LetterGenerator from './components/LetterGenerator';
+import StructuredData from './components/StructuredData';
 import { Analytics } from "@vercel/analytics/react";
 
 function App() {
@@ -13,16 +14,24 @@ function App() {
 
   return (
     <div className="App">
+      <StructuredData />
       <header className="App-header">
         <h1>📪时空信箱：对话过去的自己</h1>
       </header>
       <main>
         {!userInfo ? (
-          <UserInfoForm onSubmit={handleSubmit} />
+          <section className="user-info-section">
+            <UserInfoForm onSubmit={handleSubmit} />
+          </section>
         ) : (
-          <LetterGenerator userInfo={userInfo} />
+          <section className="letter-section">
+            <LetterGenerator userInfo={userInfo} />
+          </section>
         )}
       </main>
+      <footer>
+        <p>© 2024 AISELF</p>
+      </footer>
       <Analytics />
     </div>
   );

@@ -83,7 +83,7 @@ function UserInfoForm({ onSubmit }) {
       </div>
       <div>
         <label htmlFor="situation">当时的情况：</label>
-        <p className="situation-hint">当时在哪里，在干什么，是什么性格，最关心哪些问题，对未来的想象是什么样子……</p>
+        <p className="situation-hint">当时在哪里，在干什么，是什么性格，最在乎哪些事，对未来的想象是什么样子……</p>
         <textarea
           id="situation"
           name="situation"
